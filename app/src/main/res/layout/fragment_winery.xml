@@ -5,10 +5,5 @@
     android:id="@+id/viewPager"
     tools:context=".WineryActivity">
 
-    <android.support.v4.view.PagerTabStrip
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-    </android.support.v4.view.PagerTabStrip>
-
 
 </android.support.v4.view.ViewPager>

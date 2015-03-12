@@ -14,7 +14,8 @@
         </activity>
         <activity
             android:name=".controllers.activities.WineryActivity"
-            android:label="@string/title_activity_winery" >
+            android:label="@string/title_activity_winery"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
