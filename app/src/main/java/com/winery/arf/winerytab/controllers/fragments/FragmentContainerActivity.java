@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBarActivity;
 
 import com.winery.arf.winerytab.R;
 
 /**
  * Created by alejandrorodriguez on 3/10/15.
  */
-public abstract class FragmentContainerActivity extends FragmentActivity {
+public abstract class FragmentContainerActivity extends ActionBarActivity {
 
 
     @Override
