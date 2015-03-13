@@ -1,14 +1,18 @@
 package com.winery.arf.winerytab.controllers.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.winery.arf.winerytab.R;
+import com.winery.arf.winerytab.controllers.activities.WebActivity;
+import com.winery.arf.winerytab.controllers.activities.WineActivity;
 import com.winery.arf.winerytab.models.Wine;
 
 import butterknife.ButterKnife;
@@ -20,6 +24,7 @@ import butterknife.InjectView;
 public class WineFragment extends Fragment {
 
     @InjectView(R.id.textHola) TextView txt;
+    @InjectView(R.id.btnWeb)Button webButton;
 
     public static final String ARG_WINE = "fragment.wine";
 
@@ -32,6 +37,16 @@ public class WineFragment extends Fragment {
 
         Wine wine = (Wine) getArguments().getSerializable(ARG_WINE);
         txt.setText(wine.getName());
+
+        webButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),WebActivity.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
+
+
 }
