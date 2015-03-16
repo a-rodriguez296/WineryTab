@@ -18,6 +18,10 @@ public class WineryPagerAdapter extends FragmentPagerAdapter {
 
    private WineService mWineService = null;
 
+
+
+
+
    public WineryPagerAdapter(FragmentManager manager){
 
        super(manager);

@@ -8,7 +8,6 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,6 +51,7 @@ public class WineryFragment extends Fragment implements ViewPager.OnPageChangeLi
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
+        //Setup del action bar
         nextItem = menu.add(Menu.NONE, MENU_NEXT,1,R.string.next);
         MenuItemCompat.setShowAsAction(nextItem,MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
 
@@ -65,6 +65,7 @@ public class WineryFragment extends Fragment implements ViewPager.OnPageChangeLi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        //Delegados del action bar
         if (item.getItemId()== MENU_NEXT){
             if (mPager.getCurrentItem() < mWineService.wineList.size()-1){
                 mPager.setCurrentItem(mPager.getCurrentItem() +1);
@@ -90,10 +91,13 @@ public class WineryFragment extends Fragment implements ViewPager.OnPageChangeLi
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+
+        //Pager
         View root = inflater.inflate(R.layout.fragment_winery, container, false);
 
 
         mPager = (ViewPager) root.findViewById(R.id.viewPager);
+        //Conexión del pager con el adaptador que es el que contiene las actividades del wine.
         mPager.setAdapter(new WineryPagerAdapter(getFragmentManager()));
         mPager.setOnPageChangeListener(this);
 

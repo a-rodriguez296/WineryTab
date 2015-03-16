@@ -13,10 +13,15 @@ public class WineryActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Primero se llama el actividad y luego el fragment.
         super.onCreate(savedInstanceState);
+
+        //Container con nada adentro
         setContentView(R.layout.activity_fragment_container);
 
         FragmentManager fm = getSupportFragmentManager();
+        //Busca para ver si tiene algo andentro
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
         if (fragment == null) {
             fragment = new WineryFragment();
